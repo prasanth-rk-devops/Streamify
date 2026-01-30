@@ -19,9 +19,6 @@ This project is built to:
   - Build CI/CD pipelines
   - Deploy to Kubernetes
   - Add monitoring, security, and scaling
-- Serve as a **portfolio-grade, real-world application**
-
-This is **not a demo** or toy project.
 
 ---
 
