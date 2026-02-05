@@ -14,7 +14,7 @@ WORKDIR /app
 
 # ------ Copy dependency metadata first (layer caching) ------
     
-COPY package*.json ./
+COPY backend/package.json ./
 
 # ------ install only production dependency ------
 
