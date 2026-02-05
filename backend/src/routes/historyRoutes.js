@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const auth = require("../middleware/authMiddleware");
 const controller = require("../controllers/historyController");
+const authMiddleware = require("../middleware/authMiddleware");
 
-router.post("/:movieId", auth, controller.addHistory);
+router.get("/", authMiddleware, controller.getWatchHistory);
 
 module.exports = router;

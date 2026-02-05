@@ -1,6 +1,7 @@
-const paymentService = require("../services/paymentService");
+exports.createPayment = async (req, res) => {
+  res.status(200).json({ success: true });
+};
 
-exports.subscribe = async (req, res) => {
-  await paymentService.subscribe(req.user.id, req.body.plan);
-  res.json({ message: "Subscription active" });
+exports.getPayments = async (req, res) => {
+  res.status(200).json([]);
 };

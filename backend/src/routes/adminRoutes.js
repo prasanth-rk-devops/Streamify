@@ -1,8 +1,13 @@
 const router = require("express").Router();
-const auth = require("../middleware/authMiddleware");
-const admin = require("../middleware/adminMiddleware");
 const controller = require("../controllers/adminController");
+const authMiddleware = require("../middleware/authMiddleware");
+const adminMiddleware = require("../middleware/adminMiddleware");
 
-router.get("/users", auth, admin, controller.getUsers);
+router.use(authMiddleware);
+router.use(adminMiddleware);
+
+router.get("/users", controller.getAllUsers);
+router.post("/movies", controller.addMovie);
+router.delete("/movies/:id", controller.deleteMovie);
 
 module.exports = router;

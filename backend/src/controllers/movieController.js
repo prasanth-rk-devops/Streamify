@@ -1,17 +1,20 @@
-const db = require("../db");
+exports.getAllMovies = async (req, res) => {
+  res.status(200).json([
+    { id: 1, title: "Sample Movie", category: "action" }
+  ]);
+};
 
 exports.getByCategory = async (req, res) => {
-  const movies = await db.query(
-    "SELECT * FROM movies WHERE category=$1",
-    [req.params.category]
-  );
-  res.json(movies.rows);
+  const { category } = req.params;
+  res.status(200).json([
+    { id: 2, title: `Sample ${category} Movie`, category }
+  ]);
 };
 
 exports.getById = async (req, res) => {
-  const result = await db.query(
-    "SELECT * FROM movies WHERE id=$1",
-    [req.params.id]
-  );
-  res.json(result.rows[0]);
+  const { id } = req.params;
+  res.status(200).json({
+    id,
+    title: "Sample Movie Details"
+  });
 };

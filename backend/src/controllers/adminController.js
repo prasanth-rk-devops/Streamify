@@ -1,8 +1,11 @@
-const db = require("../db");
+exports.getAllUsers = async (req, res) => {
+  res.status(200).json([]);
+};
 
-exports.getUsers = async (req, res) => {
-  const users = await db.query(
-    "SELECT id,email,role FROM users"
-  );
-  res.json(users.rows);
+exports.addMovie = async (req, res) => {
+  res.status(201).json({ message: "Movie added" });
+};
+
+exports.deleteMovie = async (req, res) => {
+  res.status(200).json({ message: "Movie deleted" });
 };

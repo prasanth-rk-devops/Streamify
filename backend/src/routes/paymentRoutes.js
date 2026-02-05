@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const auth = require("../middleware/authMiddleware");
 const controller = require("../controllers/paymentController");
+const authMiddleware = require("../middleware/authMiddleware");
 
-router.post("/subscribe", auth, controller.subscribe);
+router.post("/", authMiddleware, controller.createPayment);
+router.get("/", authMiddleware, controller.getPayments);
 
 module.exports = router;

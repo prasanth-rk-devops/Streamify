@@ -1,9 +1,13 @@
-const db = require("../db");
+exports.getProfile = async (req, res) => {
+  res.status(200).json({
+    id: 1,
+    name: "Demo User",
+    email: "user@streamify.com"
+  });
+};
 
-exports.getProfiles = async (req, res) => {
-  const profiles = await db.query(
-    "SELECT * FROM profiles WHERE user_id=$1",
-    [req.user.id]
-  );
-  res.json(profiles.rows);
+exports.updateProfile = async (req, res) => {
+  res.status(200).json({
+    message: "Profile updated successfully"
+  });
 };

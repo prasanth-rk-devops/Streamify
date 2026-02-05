@@ -18,7 +18,7 @@ COPY backend/package.json ./
 
 # ------ install only production dependency ------
 
-RUN npm install --production && npm chace clean --force
+RUN npm install --production && npm cache clean --force
 
 # ------ Copy the application source code -------
 
