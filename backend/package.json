@@ -1,7 +1,6 @@
 {
   "name": "streamify-backend",
   "version": "1.0.0",
-  "description": "Backend API for Streamify streaming platform",
   "private": true,
   "main": "src/server.js",
   "scripts": {

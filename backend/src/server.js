@@ -9,6 +9,7 @@ const historyRoutes = require("./routes/historyRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -19,6 +20,10 @@ app.use("/api/payments", paymentRoutes);
 app.use("/api/history", historyRoutes);
 app.use("/api/admin", adminRoutes);
 
-app.listen(5000, () =>
-  console.log("Backend running on port 5000")
-);
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+app.listen(5000, () => {
+  console.log("Backend running on port 5000");
+});
